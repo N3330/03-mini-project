@@ -1,5 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
 //variables holding each character type
 var passLength = 8;
@@ -20,6 +18,8 @@ console.log(lowerLetters);
 
 // 4. display the password
 
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -27,11 +27,19 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var goodCriteria = userPrompt(); // should be true based on userPrompt functions on line 67
   var passwordText = document.querySelector("#password");
   
-  passwordText.value = password;
   
+  if(goodCriteria) {
+    var generatedPassword = generatePassword();
+    
+    passwordText.value = generatedPassword;
+  } else {
+    passwordText.value = ""; // leaves password blank if password is not a good criteria
+  }
+
+
 }
 
 
@@ -41,18 +49,23 @@ function writePassword() {
 //generate password function based on prompt criteria
 
 function generatePassword() {
-  console.log('Clicked Button')
+  var password = "";
+  for(var i = 0; i < passLength; i++) { //loops goes for how long password length user selected 
+    var createRandom = Math.floor(Math.random() * passCriteria.length);// used mathfloor to round mathrandom decimal multipled by lenght of 
+    password = password + passCriteria[createRandom]; // set password to password + the password criteria which is blank with a random index 
 
+  }
+  return password;
 
-  return "Generated Password goes here"
   }
 
 
 
-// Function for password lenght prompt ParseInt to convert it to interger from string
+// Function for password length prompt ParseInt to convert it to interger from string
 
 
 function userPrompt() {
+  passCriteria = [];
   passLength = parseInt(prompt('What length would you like your password? 8-128 characters'));
 
 //Checking if its not a number
@@ -61,19 +74,19 @@ if(isNaN(passLength) || passLength < 8 || passLength > 128) {
   return false;
 }
 //popup asking if they want lowercase letters
-if(confirm("Want lowercase letters in your passwork?")) {
+if(confirm("Want lowercase letters in your password?")) {
   passCriteria = passCriteria.concat(lowerLetters);
 }
 //popup asking if they want uppercase letters
-if(confirm("Want uppercase letters in your passwork?")) {
+if(confirm("Want uppercase letters in your password?")) {
   passCriteria = passCriteria.concat(capLetters);
 }
 //popup asking if they want special characters
-if(confirm("Want special characters in your passwork?")) {
+if(confirm("Want special characters in your password?")) {
   passCriteria = passCriteria.concat(specialCharacters);
 }
 //popup asking if they want numbers
-if(confirm("Want numbers in your passwork?")) {
+if(confirm("Want numbers in your password?")) {
   passCriteria = passCriteria.concat(lowerLetters);
 }
 
