@@ -11,6 +11,12 @@ console.log(numbers);
 console.log(capLetters.length);
 console.log(lowerLetters);
 
+//generate password function
+
+function generatePassword() {
+  console.log('Clicked Button')
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
