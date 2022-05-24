@@ -48,7 +48,7 @@ function generatePassword() {
 // used mathfloor to round mathrandom decimal and used the options array of total chracters 
     var createRandom = Math.floor(Math.random() * options.passCriteria.length); 
     console.log(createRandom);
-    var digit = options.passCriteria[createRandom];  
+    var digit = options.passCriteria[createRandom];  // create digit variable tutor suggested 
     passwordArray.push(digit); //pushed the data into the array 
 
   }
