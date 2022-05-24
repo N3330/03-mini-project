@@ -29,6 +29,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
+ // var password = "";//trying to reset generated password when clicked again.
   var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
   
@@ -42,24 +43,27 @@ passwordText.value = password;
 //generate password function based on prompt criteria
 
 function generatePassword() {
+  var passwordArray = [];// resets generated password text on screen so new password will be generated when clicked again
   var options = userPrompt(); //create options based on prompts 
   console.log(options);
   for(var i = 0; i < options.passLength; i++) { //loops goes for how long password length user selected 
-// used mathfloor to round mathrandom decimal and used the options array of total chracters 
+    // used mathfloor to round mathrandom decimal and used the options array of total chracters 
     var createRandom = Math.floor(Math.random() * options.passCriteria.length); 
     console.log(createRandom);
     var digit = options.passCriteria[createRandom];  // create digit variable tutor suggested 
     passwordArray.push(digit); //pushed the data into the array 
-
+    
   }
   return passwordArray.join(""); // returning the paswordarray joining each charater with space between them
-
-  }
+  
+}
 
 
 
 // Function for password length prompt ParseInt to convert it to interger from string
 function userPrompt() {
+  passCriteria = [];// resets options so array is clear before user prompt is called
+  console.log(passCriteria);
   passLength = parseInt(prompt('What length would you like your password? 8-128 characters'));
   console.log(passLength); // should be NaN if string is entered
 //Checking if its not a number, or if it is less than 8 characters long, or over 128 characters long
@@ -71,7 +75,7 @@ if(isNaN(passLength) || passLength < 8 || passLength > 128) {
 //popup asking if they want lowercase letters used concat to add user selections to passcriteria array
 if(confirm("Want lowercase letters in your password?")) {
   passCriteria = passCriteria.concat(lowerLetters);
-}
+}   //passCriteria = passCriteria += lowerLetters;
 //popup asking if they want uppercase letters used concat to add user selections to passcriteria array
 if(confirm("Want uppercase letters in your password?")) {
   passCriteria = passCriteria.concat(capLetters);
