@@ -16,3 +16,9 @@ users selections of uppercase, lowercase, numbers and special characters to help
 
 ## Usage
 When the user needs a new secure password they can click Generate Password button which will prompt how many characters between 8-128, if they want to use lowercase letters, uppercase, special characters, and numbers. Then the users inputs will be validated to make sure it meets the minimum criteria of at least one of the characters and betwen 8-128 characters longs. If wrong the user will receive an alert with an error message to start over. If validated the user will receive a password that matches the selected criteria which will be displayed on the screen.
+
+## Resources
+- [Live Password Generator site](https://n3330.github.io/my-password-generator/)
+- [Repository](https://github.com/N3330/my-password-generator)
+- [LowerCase Arrays](https://attacomsian.com/blog/javascript-array-lowercase-uppercase)
+- [Concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
