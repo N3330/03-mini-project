@@ -18,8 +18,6 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-
 // Write password to the #password input
 function writePassword() {
  // var password = "";//trying to reset generated password when clicked again.
@@ -28,10 +26,7 @@ function writePassword() {
   
 
 passwordText.value = password;
-
-
 }
-
 
 //generate password function based on prompt criteria
 
@@ -50,8 +45,6 @@ function generatePassword() {
   return passwordArray.join(""); // returning the paswordarray joining each charater with space between them
   
 }
-
-
 
 // Function for password length prompt ParseInt to convert it to interger from string
 function userPrompt() {
