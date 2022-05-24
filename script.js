@@ -13,13 +13,6 @@ console.log(capLetters.length);
 console.log(lowerLetters);
 console.log(passCriteria)
 
-
-//  prompt if lowercase,uppercase, special characters
-// 2. validate input that 8-128 and at least one character type is being selected
-// 3. generate random password based on selections
-
-// 4. display the password
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
