@@ -42,7 +42,7 @@ passwordText.value = password;
 //generate password function based on prompt criteria
 
 function generatePassword() {
-  var options = userPrompt(); //create options 
+  var options = userPrompt(); //create options based on prompts 
   console.log(options);
   for(var i = 0; i < options.passLength; i++) { //loops goes for how long password length user selected 
 // used mathfloor to round mathrandom decimal and used the options array of total chracters 
